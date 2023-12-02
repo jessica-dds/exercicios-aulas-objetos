@@ -23,7 +23,9 @@ const cartao = {
     consumo
 };
 
+let totalAPagar = 0;
+for (let produto of consumo) {
+    totalAPagar += produto.precoUnitario * produto.quantidade;
+}
 
-console.log(cartao.nome); //Arnaldo
-console.log(cartao.idade); //40
-console.log(cartao.consumo[0].nome); //hamburguer 
+console.log(`Sr(a) ${cartao.nome}, o total a pagar é R$ ${(totalAPagar / 100).toFixed(2)}.`)
